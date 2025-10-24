@@ -1,6 +1,6 @@
 import type { Item } from "./src/models/Item";
 
-export const clothing = [
+export const clothing: Item[] = [
     {
         id: 1,
         name: "Classic White T-Shirt",

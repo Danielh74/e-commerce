@@ -15,4 +15,4 @@ export interface Item {
 }
 
 type Gender = "Male" | "Female" | "Unisex";
-type Size = "XS" | "S" | "M" | "L" | "XL" | "XXL";
+type Size = "One Size" | "XS" | "S" | "M" | "L" | "XL" | "XXL";

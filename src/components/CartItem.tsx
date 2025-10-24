@@ -1,4 +1,3 @@
-import React from 'react'
 import image from '../assets/white-shirt.jpg'
 import type { Item } from '../models/Item'
 
