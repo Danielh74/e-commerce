@@ -1,4 +1,5 @@
 import type { Item } from "./src/models/Item";
+import image from '../assets/white-shirt.jpg'
 
 export const clothing: Item[] = [
     {
@@ -14,7 +15,7 @@ export const clothing: Item[] = [
         createdAt: new Date("2025-09-15T12:00:00Z"),
         price: 29.99,
         stock: 45,
-        imageUrl: "https://picsum.photos/id/1/200/300",
+        imageUrl: image,
     },
     {
         id: 2,
