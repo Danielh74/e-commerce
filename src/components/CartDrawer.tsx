@@ -30,7 +30,7 @@ const CartDrawer = ({ isOpen, onClose }: Props) => {
                                     <button
                                         type="button"
                                         onClick={onClose}
-                                        className="relative rounded-md text-gray-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                                        className="relative text-red-600 bg-white rounded-full p-1 hover:cursor-pointer"
                                     >
                                         <span className="absolute -inset-2.5" />
                                         <span className="sr-only">Close panel</span>
@@ -40,7 +40,7 @@ const CartDrawer = ({ isOpen, onClose }: Props) => {
                             </TransitionChild>
                             <aside className="relative flex h-full flex-col overflow-y-auto bg-white py-6 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10">
                                 <section className="px-4 sm:px-6">
-                                    <DialogTitle className="text-base font-semibold border-b border-gray-300">Your Cart</DialogTitle>
+                                    <DialogTitle className="text-xl font-medium border-b border-gray-300">Your Cart</DialogTitle>
                                 </section>
                                 <section className="relative mt-6 flex flex-col gap-3 px-4 sm:px-6 overflow-auto">
                                     <CartItem item={item} />
