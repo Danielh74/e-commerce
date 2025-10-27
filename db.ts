@@ -1,5 +1,5 @@
 import type { Item } from "./src/models/Item";
-import image from '../assets/white-shirt.jpg'
+import image from "./src/assets/white-shirt.jpg";
 
 export const clothing: Item[] = [
     {
@@ -16,6 +16,7 @@ export const clothing: Item[] = [
         price: 29.99,
         stock: 45,
         imageUrl: image,
+        sales: 150
     },
     {
         id: 2,
@@ -31,6 +32,7 @@ export const clothing: Item[] = [
         price: 89.5,
         stock: 22,
         imageUrl: "https://picsum.photos/id/2/200/300",
+        sales: 60
     },
     {
         id: 3,
@@ -46,6 +48,7 @@ export const clothing: Item[] = [
         price: 129.99,
         stock: 15,
         imageUrl: "https://picsum.photos/id/3/200/300",
+        sales: 16
     },
     {
         id: 4,
@@ -61,6 +64,7 @@ export const clothing: Item[] = [
         price: 49.99,
         stock: 60,
         imageUrl: "https://picsum.photos/id/4/200/300",
+        sales: 240
     },
     {
         id: 5,
@@ -76,6 +80,7 @@ export const clothing: Item[] = [
         price: 59.0,
         stock: 30,
         imageUrl: "https://picsum.photos/id/5/200/300",
+        sales: 21
     },
     {
         id: 6,
@@ -91,6 +96,7 @@ export const clothing: Item[] = [
         price: 69.99,
         stock: 40,
         imageUrl: "https://picsum.photos/id/6/200/300",
+        sales: 140
     },
     {
         id: 7,
@@ -106,6 +112,7 @@ export const clothing: Item[] = [
         price: 34.5,
         stock: 55,
         imageUrl: "https://picsum.photos/id/7/200/300",
+        sales: 100
     },
     {
         id: 8,
@@ -121,6 +128,7 @@ export const clothing: Item[] = [
         price: 24.99,
         stock: 75,
         imageUrl: "https://picsum.photos/id/8/200/300",
+        sales: 12
     },
 ];
 
@@ -130,7 +138,7 @@ export const categories = [
     { "id": 1, "name": "T-shirts", "gender": "unisex" },
     { "id": 2, "name": "Jackets", "gender": "unisex" },
     { "id": 3, "name": "Pants", "gender": "unisex" },
-    { "id": 4, "name": "Dresses", "gender": "female" },
+    { "id": 4, "name": "Dresses", "gender": "women" },
     { "id": 5, "name": "Footwear", "gender": "unisex" },
     { "id": 6, "name": "Hoodies", "gender": "unisex" },
     { "id": 7, "name": "Shorts", "gender": "unisex" },

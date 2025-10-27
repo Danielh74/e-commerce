@@ -11,7 +11,8 @@ export interface Item {
     createdAt: Date,
     price: number,
     stock: number,
-    imageUrl: string
+    imageUrl: string,
+    sales: number
 }
 
 type Gender = "Male" | "Female" | "Unisex";
