@@ -2,7 +2,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import CartItem from './CartItem';
 import { clothing } from '../../db'
-import type { Item } from '../models/Item';
+import type Item from '../models/Item';
 
 type Props = {
     isOpen: boolean,

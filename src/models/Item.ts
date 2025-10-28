@@ -1,9 +1,9 @@
-export interface Item {
+export default interface Item {
     id: number;
     name: string;
     description: string;
     gender: Gender
-    size: Size,
+    sizes: Partial<Record<Size, number>>;
     color: string,
     category: string,
     brand: string,
@@ -16,4 +16,4 @@ export interface Item {
 }
 
 type Gender = "Male" | "Female" | "Unisex";
-type Size = "One Size" | "XS" | "S" | "M" | "L" | "XL" | "XXL";
+type Size = "OneSize" | "XS" | "S" | "M" | "L" | "XL" | "XXL";

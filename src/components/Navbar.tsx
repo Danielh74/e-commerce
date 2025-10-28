@@ -22,10 +22,10 @@ export default function Navbar() {
     return (
         <>
             <nav className="border-b border-b-gray-300 mx-10">
-                <div className="flex justify-between py-3 items-center">
+                <div className="flex justify-between py-3">
                     <div className="flex gap-5 flex-1 ">
-                        <NavigateButton onClick={() => openFeaturedHandler('female')}>Women</NavigateButton>
-                        <NavigateButton onClick={() => openFeaturedHandler('male')}>Men</NavigateButton>
+                        <NavigateButton onClick={() => openFeaturedHandler('women')}>Women</NavigateButton>
+                        <NavigateButton onClick={() => openFeaturedHandler('men')}>Men</NavigateButton>
                     </div>
                     <div className="flex-1">
                         <form className="flex border rounded-2xl px-3 py-1">
@@ -90,7 +90,6 @@ export default function Navbar() {
                                         </MenuItem>
                                     </>
                                 }
-
                             </MenuItems>
                         </Menu>
                         <HeartIcon aria-hidden="true" className="size-6 hover:cursor-pointer" />
@@ -101,21 +100,22 @@ export default function Navbar() {
                         <CartDrawer isOpen={cartDrawer} onClose={() => { setCartDrawer(false) }} />
                     </div>
                 </div>
+                <section className={`absolute -mx-10 w-full flex bg-white shadow-lg duration-150 h-fit pt-5 z-1 ${!featuredOpen.open && 'opacity-0 duration-150'}`} >
+                    <article className="flex flex-col gap-2 p-10">
+                        <span className="font-medium">Clothing</span>
+                        {categories.map(category => {
+                            if (category.gender === featuredOpen.gender || category.gender === 'unisex') {
+                                return <button className="flex hover:cursor-pointer" key={category.id}>{category.name}</button>
+                            }
+                        })}
+                    </article>
+                    <article className="flex flex-col gap-2 p-10">
+                        <span className="font-medium">Brands</span>
+                        {brands.map(brand => <button className="flex hover:cursor-pointer" key={brand.id}>{brand.name}</button>)}
+                    </article>
+                </section>
             </nav>
-            <section className={`absolute flex bg-white shadow-lg duration-150 w-full h-fit pt-5 ${!featuredOpen.open && 'opacity-0 duration-150'}`} >
-                <article className="flex flex-col gap-2 p-10">
-                    <span className="font-medium">Clothing</span>
-                    {categories.map(category => {
-                        if (category.gender === featuredOpen.gender || category.gender === 'unisex') {
-                            return <button className="flex hover:cursor-pointer" key={category.id}>{category.name}</button>
-                        }
-                    })}
-                </article>
-                <article className="flex flex-col gap-2 p-10">
-                    <span className="font-medium">Brands</span>
-                    {brands.map(brand => <button className="flex hover:cursor-pointer" key={brand.id}>{brand.name}</button>)}
-                </article>
-            </section>
+
         </>
 
     )

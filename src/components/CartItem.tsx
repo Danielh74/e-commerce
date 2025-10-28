@@ -1,6 +1,6 @@
-import type { Item } from '../models/Item'
+import type Item from '../models/Item'
 
-const CartItem = ({ item }: { item: Item }) => {
+function CartItem({ item }: { item: Item }) {
     const quantity = 1;
     return (
         <main className='flex gap-3'>
@@ -14,7 +14,7 @@ const CartItem = ({ item }: { item: Item }) => {
                 </div>
                 <div className='flex flex-col'>
                     <span className='text-sm'>Color: {item.color}</span>
-                    <span className='text-sm'>Size: {item.size}</span>
+                    {/* <span className='text-sm'>Size: {item.size}</span> */}
                     <span className='text-sm'>Quantity: {quantity}</span>
                     <span className='text-sm'>Overall Price: {item.price * quantity}$</span>
                 </div>

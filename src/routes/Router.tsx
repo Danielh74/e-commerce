@@ -4,6 +4,7 @@ import Women from "../pages/Women";
 import App from "../App";
 import Home from "../pages/Home";
 import Category from "../pages/Category";
+import Product from "../pages/Product";
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
             { path: "/women", element: <Women /> },
             { path: "/men", element: <Men /> },
             { path: "/categories/:category/:gender?", element: <Category /> },
+            { path: "/product/:id", element: <Product /> },
         ]
     },
 

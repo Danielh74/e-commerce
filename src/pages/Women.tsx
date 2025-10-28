@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Women = () => {
+function Women() {
     return (
         <div>Women</div>
     )
