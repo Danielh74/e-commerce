@@ -2,7 +2,7 @@
 
 import { HeartIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/24/outline"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
-//import { useNavigate } from "react-router"
+import { useNavigate } from "react-router"
 import NavigateButton from "./UI/NavigateButton";
 import { useState } from "react";
 import { brands, categories } from '../../db'
@@ -10,13 +10,18 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import CartDrawer from "./CartDrawer";
 
 export default function Navbar() {
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const [featuredOpen, setFeaturedOpen] = useState({ open: false, gender: '' });
     const [cartDrawer, setCartDrawer] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
 
     const openFeaturedHandler = (gender: string) => {
         setFeaturedOpen(prev => ({ gender: gender, open: !(prev.gender === gender && prev.open) }))
+    };
+
+    const goToCategory = (category: string) => {
+        navigate(`/categories/${category}`);
+        setFeaturedOpen(prev => ({ ...prev, open: false }));
     }
 
     return (
@@ -105,7 +110,7 @@ export default function Navbar() {
                         <span className="font-medium">Clothing</span>
                         {categories.map(category => {
                             if (category.gender === featuredOpen.gender || category.gender === 'unisex') {
-                                return <button className="flex hover:cursor-pointer" key={category.id}>{category.name}</button>
+                                return <button className="flex hover:cursor-pointer" key={category.id} onClick={() => goToCategory(category.name)}>{category.name}</button>
                             }
                         })}
                     </article>
