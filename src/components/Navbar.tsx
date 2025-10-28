@@ -100,7 +100,7 @@ export default function Navbar() {
                         <CartDrawer isOpen={cartDrawer} onClose={() => { setCartDrawer(false) }} />
                     </div>
                 </div>
-                <section className={`absolute -mx-10 w-full flex bg-white shadow-lg duration-150 h-fit pt-5 z-1 ${!featuredOpen.open && 'opacity-0 duration-150'}`} >
+                <section className={`absolute -mx-10 w-full flex bg-white shadow-lg duration-150 h-fit pt-5 z-1 ${!featuredOpen.open && 'hidden duration-150'}`} >
                     <article className="flex flex-col gap-2 p-10">
                         <span className="font-medium">Clothing</span>
                         {categories.map(category => {

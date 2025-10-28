@@ -4,7 +4,7 @@ import type Item from "../../models/Item"
 function ItemCard({ item }: { item: Item }) {
     const navigate = useNavigate();
     return (
-        <main className="flex flex-col overflow-hidden w-1/6 rounded shadow-sm z-1 cursor-pointer" onClick={() => { navigate(`/product/${item.id}`) }}>
+        <main className="flex flex-col overflow-hidden w-1/6 rounded shadow-sm cursor-pointer" onClick={() => { navigate(`/product/${item.id}`) }}>
             <header className="h-2/3">
                 <img src={item.imageUrl} className="w-full h-full object-cover" />
             </header>

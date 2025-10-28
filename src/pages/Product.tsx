@@ -22,8 +22,7 @@ function Product() {
                     <span className='text-lg'>{product.description}</span>
                     <span className='font-medium text-2xl mt-8'>${product.price}</span>
                     <span className='text-lg'>Color: {product.color}</span>
-                    {/* <span className='text-lg'>Size: {product.sizes}</span> */}
-                    <button>Add To Cart</button>
+                    <button className=' text-white bg-black p-2 hover:cursor-pointer hover:bg-black/60'>Add To Cart</button>
                 </section>
             </main>
             :
