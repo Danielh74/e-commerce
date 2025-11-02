@@ -21,12 +21,10 @@ function Category() {
 
     return (
         <main className='flex flex-col'>
-            <header>
+            <header className=''>
                 {category}
             </header>
-            <article>
-                <FilterBar />
-            </article>
+            <FilterBar />
 
             <section className='flex flex-wrap mt-4 justify-center gap-5'>
                 {categoryItems.map(item => <ItemCard key={item.id} item={item} />)}

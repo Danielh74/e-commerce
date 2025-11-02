@@ -6,7 +6,10 @@ function App() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <main className="mt-15">
+        <Outlet />
+      </main>
+
     </>
   )
 }

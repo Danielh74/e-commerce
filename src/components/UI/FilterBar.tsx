@@ -8,7 +8,7 @@ function FilterBar() {
     const [selectedSort, setSelectedSort] = useState('');
 
     return (
-        <form className="flex flex-wrap flex-1 border-t border-b border-gray-300 mx-6 p-2 relative gap-5 justify-center">
+        <form className="flex flex-wrap sticky top-14 flex-1 border-t border-b border-gray-300 bg-white mx-6 p-2 gap-5 justify-center">
             <select value={selectedSize} onChange={e => setSelectedSize(e.target.value)} className="border border-gray-500 min-w-1/6 p-1 rounded cursor-pointer">
                 <option value="">Size</option>
                 {sizes.map(size => <option key={size} value={size}>{size}</option>)}
