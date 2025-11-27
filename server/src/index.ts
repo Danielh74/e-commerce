@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import ExpressError from './utils/ExpressError';
 import mongoose from 'mongoose'
+import ProductsRouter from './routes/products'
 
 mongoose.connect('mongodb://127.0.0.1:27017/eCommerce');
 const db = mongoose.connection;
@@ -15,9 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!')
-});
+app.use('/api/products', ProductsRouter);
 
 // Send a 404 error for all unmatched routes with the message 'Page Not Found'
 app.all(/(.*)/, (req: Request, res: Response, next: NextFunction) => {

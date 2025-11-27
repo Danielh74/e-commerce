@@ -1,20 +1,46 @@
-import { model, Schema } from "mongoose";
+import { Schema, model } from "mongoose";
+
+const AddressSchema = new Schema({
+    fullName: String,
+    phoneNumber: String,
+    country: String,
+    city: String,
+    streetAddress: String,
+    zipCode: String,
+    isDefault: { type: Boolean, default: false }
+}, { _id: false });
 
 const UserSchema = new Schema({
-    email: {
+    email: { type: String, required: true, unique: true, lowercase: true },
+    passwordHash: { type: String, required: true },
+
+    role: {
         type: String,
-        required: true,
-        unique: true
+        enum: ["user", "admin"],
+        default: "user"
     },
-    displayName: String,
+
+    firstName: String,
+    lastName: String,
+    phoneNumber: String,
+
+    addresses: [AddressSchema],
+
     wishlist: [{
         type: Schema.Types.ObjectId,
-        ref: 'Product'
+        ref: "Product"
     }],
-    cart: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Product'
-    }]
-});
 
-export const User = model('User', UserSchema);
+    cart: {
+        type: Schema.Types.ObjectId,
+        ref: "Cart"
+    },
+
+    isVerified: { type: Boolean, default: false },
+    verificationToken: String,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
+
+}, { timestamps: true });
+
+export const User = model("User", UserSchema);
